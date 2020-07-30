@@ -1,11 +1,11 @@
 {
-  "name": "WizIO Arduino and Teensy Simulator ( WINDOWS )",
+  "name": "WizIO Ardunio and Teensy Simulator ( POSIX )",
   "url": "",
   "build": {
-    "core": "windows",
+    "core": "ownposix",
     "mcu": "",    
     "f_cpu": "100000000L",
-    "variant": "emu-windows"
+    "variant": "emu-posix"
   },
   "debug": {
     "tools": {

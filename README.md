@@ -1,4 +1,4 @@
-# Arduino - PlatformIO Simulator for PC
+# Arduino - PlatformIO Simulator for PC for Zusoro
 
 **Simulator !?!?** Arduino source codes is compiled and executed as PC applications
 

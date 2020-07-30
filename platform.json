@@ -1,14 +1,14 @@
 {
-  "name": "wizio",
-  "title": "WizIO",
-  "description": "Arduino Simulator 2019 Georgi Angelov",
-  "url": "https://github.com/Wiz-IO/platform-wizio",
+  "name": "wizio-zusoro",
+  "title": "WizIO-zusoro",
+  "description": "Arduino Simulator 2019 Georgi Angelov for ZSR",
+  "url": "https://github.com/zusoro/platform-wizio-zusoro",
   "homepage": "http://www.wizio.eu/",
   "license": "Apache-2.0",
   "engines": { "platformio": "^3.0.0" },
   "repository": {
     "type": "",
-    "url": "https://github.com/Wiz-IO/platform-wizio.git"
+    "url": "https://github.com/zusoro/platform-wizio-zusoro"
   },
   "version": "1.0.3",
   "packageRepositories": [
@@ -17,18 +17,22 @@
   ],
   "frameworks": {
       "arduino": {
-        "package": "framework-wizio",
+        "package": "framework-wizio-zusoro",
         "script": "builder/frameworks/arduino.py"
       },   
       "gcc": {
-        "package": "framework-wizio",
+        "package": "framework-wizio-zusoro",
         "script": "builder/frameworks/gcc.py"
-      }         
+      },         
+      "teensy": {
+        "package": "framework-wizio-zusoro",
+        "script": "builder/frameworks/teensy.py"
+      }   
   },
   "packages": {
-    "framework-wizio": {
+    "framework-wizio-zusoro": {
         "type": "framework",
-        "version": "https://github.com/Wiz-IO/framework-wizio.git"
+        "version": "https://github.com/zusoro/framework-wizio-zusoro"
     }
   }
 }
