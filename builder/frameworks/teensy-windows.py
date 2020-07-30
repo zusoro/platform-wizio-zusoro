@@ -46,6 +46,7 @@ def init_compiler(env):
 def dev_init(env, platform):    
     init_compiler(env)
     framework_dir = env.PioPlatform().get_package_dir("framework-wizio-zusoro")
+    platform_mimic = "arduino"
     PC = env.get("PLATFORM") # win32
     if PC.startswith("win"):
         core = "windows"    
@@ -57,7 +58,7 @@ def dev_init(env, platform):
             "CORE_" + core.upper().replace("-", "_"), 
         ],        
         CPPPATH = [ # -I
-            join(framework_dir,  platform, platform),
+            join(framework_dir,  platform, platform_mimic),
             join(framework_dir,  platform, "cores", core),
             join(framework_dir,  platform, "variants", variant),      
             join("$PROJECT_DIR"),         
@@ -101,13 +102,16 @@ def dev_init(env, platform):
         ],                           
         UPLOADCMD = run_application 
     )
-    print(f"Path: {framework_dir}\n Platform: {platform}\n Core: {core}\n Variant: {variant}")
+    # print(F"Path: {framework_dir}\n Platform: {platform}\n Core: {core}\n Variant: {variant}")
+    print("Path: {framework_dir}\n Platform: {platform}\n Core: {core}\n Variant: {variant}".format(framework_dir=framework_dir, platform=platform, core=core, variant=variant))
+    
+
 
     libs = []
     libs.append(
         env.BuildLibrary(
             join("$BUILD_DIR", "_" + platform),
-            join(framework_dir, platform, platform),
+            join(framework_dir, platform, platform_mimic),
     ))    
     libs.append(
         env.BuildLibrary(
